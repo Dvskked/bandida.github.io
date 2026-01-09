@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(black, rgb(52, 52, 52), rgb(88, 88, 88));
+}
+
+
+
+header{
+    display: flex;
+    padding: 15px;
+    border: 1px solid rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.titulo-header{
+    color: cyan;
+    text-shadow:
+        0 0 2px rgba(34, 219, 225, 0.872),
+        0 0 4px rgb(33, 245, 242);
+        font-size: 30px;
+}
+
+.bandida-header{
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+
+.contenido{
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+    position: relative;
+    overflow: hidden;
+    margin: 50px;
+}
+
+.contenido::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 80% 40%, white, transparent),
+        radial-gradient(1px 1px at 50% 70%, white, transparent),
+        radial-gradient(1px 1px at 10% 80%, white, transparent),
+        radial-gradient(1px 1px at 90% 20%, white, transparent);
+    background-size: 80px 80px;
+    animation: nieve 30s linear infinite;
+    pointer-events: none;
+}
+
+
+@keyframes nieve {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 500px;
+    }
+}
+
+
+.margen{
+    min-height: 500px; 
+    width: 550px;
+    border: 1px solid white;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+
+.registro{
+    padding: 20px;
+}
+
+
+.titulo-registro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.mensaje-registro{
+    color: rgb(222, 220, 220);
+    
+}
+
+.usuario{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.entrada input{
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+.entrada input::placeholder{
+    color: rgba(255,255,255,0.6);
+}
+
+.entrada input:focus{
+    box-shadow:
+        0 0 10px rgb(193, 193, 193),
+        0 0 20px rgba(242, 242, 242, 0.7);
+    border-color: white;
+}
+
+
+.boton-entrada{
+    display: flex;
+    justify-content: center;
+}
+
+.iniciar{
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow:
+        0 0 10px rgba(143, 143, 143, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.802);
+    transition: 0.3s;
+}
+
+.iniciar:hover{
+    background: rgb(208, 208, 208);
+    color: black;
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px rgba(0,255,255,0.8);
+}
+
+.iniciar:active{
+    transform: scale(0.95);
+}
+
+
+.calculadora{
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid cyan;
+    color: white;
+}
+
+.iniciar-juego{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.iniciar-juego button{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.iniciar-juego button:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px rgba(0,255,255,0.8);
+}
+
+#juego{
+    display: none;
+    color: white;
+}
+
+.content{
+    margin-top: 70px;
+
+}
+
+.re{
+    display: none;
+}
+
+/* ===== INPUTS ===== */
+.juego input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: transparent;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    transition: 0.3s;
+}
+
+.juego input:focus {
+    box-shadow: 0 0 20px cyan;
+    border-color: #00ffff;
+}
+
+/* ===== BOTONES ===== */
+.juego button,
+.iniciar-juego button,
+#resultado {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: transparent;
+    color: cyan;
+    border: 2px solid cyan;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    transition: 0.3s;
+}
+
+.juego button:hover,
+.iniciar-juego button:hover,
+#resultado:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 30px cyan;
+}
+
+/* ===== MENSAJES ===== */
+.mensaje-calculadora,
+#resultadoMensaje {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    background: rgba(0,0,0,0.4);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/* ===== TITULOS ===== */
+.juego h2 {
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+}
+
+/* ===== OPCIONES ===== */
+.opciones span {
+    display: block;
+    margin: 5px 0;
+    color: #ddd;
+}
+
+.content input{
+    height: 40px;
+    width: 180px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.content input:hover{
+    background: rgb(218, 214, 214);
+}
+
+#resultadoMensajito{
+    padding: 10px;
+    color: white;
+    width: 200px;
+    height: 500px;
+
+}
