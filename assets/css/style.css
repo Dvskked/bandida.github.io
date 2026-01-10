@@ -6,7 +6,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(black, rgb(52, 52, 52), rgb(88, 88, 88));
+    background: linear-gradient(black, rgb(52, 52, 52), rgb(46, 46, 46));
 }
 
 
@@ -14,7 +14,7 @@ body {
 header{
     display: flex;
     padding: 15px;
-    border: 1px solid rgb(255, 255, 255);
+    border: none;
     align-items: center;
     justify-content: center;
     gap: 50px;
@@ -25,7 +25,7 @@ header{
     text-shadow:
         0 0 2px rgba(34, 219, 225, 0.872),
         0 0 4px rgb(33, 245, 242);
-        font-size: 30px;
+        font-size: 22px;
 }
 
 .bandida-header{
@@ -57,11 +57,9 @@ header{
     background-image:
         radial-gradient(1px 1px at 20% 30%, white, transparent),
         radial-gradient(1px 1px at 80% 40%, white, transparent),
-        radial-gradient(1px 1px at 50% 70%, white, transparent),
-        radial-gradient(1px 1px at 10% 80%, white, transparent),
-        radial-gradient(1px 1px at 90% 20%, white, transparent);
+        radial-gradient(1px 1px at 50% 70%, white, transparent);
     background-size: 80px 80px;
-    animation: nieve 30s linear infinite;
+    animation: nieve 35s linear infinite;
     pointer-events: none;
 }
 
@@ -79,7 +77,7 @@ header{
 .margen{
     min-height: 500px; 
     width: 550px;
-    border: 1px solid white;
+    border: none;
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding-bottom: 20px;
@@ -275,13 +273,13 @@ header{
     line-height: 1.5;
 }
 
-/* ===== TITULOS ===== */
+
 .juego h2 {
     color: cyan;
     text-shadow: 0 0 10px cyan;
 }
 
-/* ===== OPCIONES ===== */
+
 .opciones span {
     display: block;
     margin: 5px 0;
@@ -295,10 +293,23 @@ header{
     margin-left: 5px;
     margin-top: 10px;
     padding: 5px;
+    outline: none;
+    border: white;
+}
+
+.content input:focus {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    border-color: #00ffff;
 }
 
 .content input:hover{
     background: rgb(218, 214, 214);
+}
+
+.content h2{
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.872),
+        0 0 4px rgb(0, 0, 0);
 }
 
 #resultadoMensajito{
@@ -308,3 +319,34 @@ header{
     height: 500px;
 
 }
+
+#imgResultado{
+    height: 100%;
+    width: 100%;
+}
+
+.volver{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.volver:hover{
+    background: rgb(255, 255, 255);
+    color: black;
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px rgba(0,255,255,0.8);
+}
+
+.datos-bandi{
+    color: rgb(209, 209, 209);
+}
+
+.insta{
+    text-decoration: none;
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.872),
+        0 0 4px rgb(234, 23, 174);
+}
+
