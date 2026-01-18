@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         re.style.display = "block";
 
         if (v1 == 1) {
-            puntos += 100;
+            puntos += 120;
             dato1 = "Rubia";
         } else if (v1 == 2) {
             puntos += 80;
@@ -123,10 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
         if (v2 == 1) {
-            puntos += 70;
+            puntos += 50;
             dato2 = "Liso";
         } else if (v2 == 2) {
-            puntos += 80;
+            puntos += 90;
             dato2 = "Ondulado";
         } else if (v2 == 3) {
             puntos += 60;
@@ -142,10 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
 
         if (v3 == 1) {
-            puntos += 80;;
+            puntos += 50;;
             dato3 = "Negros";
         } else if (v3 == 2) {
-            puntos += 70;
+            puntos += 80;
             dato3 = "Cafes";
         } else if (v3 == 3) {
             puntos += 100;;
@@ -164,38 +164,38 @@ document.addEventListener("DOMContentLoaded", () => {
         
         
         if (v4 == 1) {
-            puntos += 90;;
+            puntos += 100;;
             dato4 = "Cortica";
         } else if (v4 == 2) {
-            puntos += 80;;
-            dato2 = "Normalita";
+            puntos += 70;;
+            dato4 = "Normalita";
         } else if (v4 == 3) {
-            puntos += 70;
-            dato2 = "Re grande";
+            puntos += 50;
+            dato4 = "Re grande";
         }  else{
             puntos +=10;
-            dato2 = "Sin dato";
+            dato4 = "Sin dato";
         }
 
 
 
         if (v5 == 1) {
-            puntos += 120;
+            puntos += 160;
             dato5 = "Bumanguesa";
         } else if (v5 == 2) {
-            puntos += 100;
+            puntos += 170;
             dato5 = "Paisa";
         } else if (v5 == 3) {
-            puntos += 60;
+            puntos += 40;
             dato5 = "Costeña";
         } else if (v5 == 4) {
-            puntos += 60;
+            puntos += 30;
             dato5 = "Boyacense";
         } else if (v5 == 5) {
-            puntos += 70;
+            puntos += 20;
             dato5 = "Rola";
         } else if (v5 == 6) {
-            puntos += 80;
+            puntos += 70;
             dato5 = "Caleña";
         } else if (v5 == 7) {
             puntos += 10;
@@ -211,16 +211,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         if (v6 == 1) {
-            puntos += 100;
+            puntos += 70;
             dato6 = "Blanquita";
         } else if (v6 == 2) {
-            puntos += 90;
+            puntos += 110;
             dato6 = "Morenita";
         } else if (v6 == 3) {
             puntos += 60;
             dato6 = "Afrocolombiana";
         } else if (v6 == 4) {
-            puntos += 70;
+            puntos += 200;
             dato6 = "Amarillisima";
         } else{
             puntos +=10;
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
             puntos += 70;
             dato7 = "Igual";
         } else if (v7 == 3) {
-            puntos += 90;
+            puntos += 110;
             dato7 = "Bajita";
         } else{
             puntos +=10;
@@ -249,10 +249,10 @@ document.addEventListener("DOMContentLoaded", () => {
             dato8 = "Flaca";
         } else if (v8 == 2) {
             dato8 = "Normalita";
-            puntos += 90;
+            puntos += 60;
         } else if (v8 == 3) {
             dato8 = "Gordita jijiji";
-            puntos += 60;
+            puntos += 50;
         } else{
             puntos +=10;
             dato8 = "Sin dato";
@@ -260,14 +260,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
         if (v9 == 1) {
-            puntos += 100;
+            puntos += 70;
             dato9 = "Mayor que tu";
         } else if (v9 == 2) {
             dato9 = "Misma edad";
-            puntos += 70;
+            puntos += 60;
         } else if (v9 == 3) {
             dato9 = "Menor q tu (Pedofilo)";
-            puntos += 50;
+            puntos += 70;
         } else{
             puntos +=10;
             dato9 = "Sin dato";
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         resultadoMensajito.innerHTML = `
             <strong>${nombre}...</strong><br><br>
-            Tu puntaje es <strong>${puntos}</strong><br>
+            El puntaje de ${mujer} es <strong>${puntos}</strong><br>
             Nivel: <strong>${nivel}</strong><br><br><br>
             ${mensajeFinal}
         `;
