@@ -9,6 +9,13 @@ body {
     background: linear-gradient(black, rgb(52, 52, 52), rgb(46, 46, 46));
 }
 
+#juegoGo{
+    color: #ea00ff;
+}
+
+#juegoGo:hover{
+    background: white;
+}
 
 
 header{
@@ -21,10 +28,10 @@ header{
 }
 
 .titulo-header{
-    color: cyan;
+    color: rgb(255, 0, 230);
     text-shadow:
-        0 0 2px rgba(34, 219, 225, 0.872),
-        0 0 4px rgb(33, 245, 242);
+        0 0 2px rgba(225, 34, 193, 0.872),
+        0 0 4px rgb(245, 33, 238);
         font-size: 22px;
 }
 
@@ -161,8 +168,8 @@ header{
     background: rgb(208, 208, 208);
     color: black;
     box-shadow:
-        0 0 20px cyan,
-        0 0 40px rgba(0,255,255,0.8);
+        0 0 20px rgb(247, 0, 255),
+        0 0 40px rgba(255, 0, 221, 0.8);
 }
 
 .iniciar:active{
@@ -174,7 +181,7 @@ header{
     display: none;
     margin-top: 30px;
     padding: 20px;
-    border-top: 1px solid cyan;
+    border-top: 1px solid rgb(255, 0, 204);
     color: white;
 }
 
@@ -189,14 +196,15 @@ header{
     height: 50px;
     width: 200px;
     border-radius: 10px;
+    color: #ff00dd;
 }
 
 .iniciar-juego button:hover{
     background: rgb(255, 255, 255);
     color: black;
     box-shadow:
-        0 0 20px cyan,
-        0 0 40px rgba(0,255,255,0.8);
+        0 0 20px rgb(247, 0, 255),
+        0 0 40px rgba(255, 0, 195, 0.8);
 }
 
 #juego{
@@ -219,18 +227,18 @@ header{
     padding: 12px;
     margin-top: 10px;
     background: transparent;
-    border: 2px solid cyan;
+    border: 2px solid rgb(238, 0, 255);
     border-radius: 8px;
     color: white;
     font-size: 16px;
     outline: none;
-    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    box-shadow: 0 0 10px rgba(255, 0, 238, 0.4);
     transition: 0.3s;
 }
 
 .juego input:focus {
-    box-shadow: 0 0 20px cyan;
-    border-color: #00ffff;
+    box-shadow: 0 0 20px rgb(255, 0, 242);
+    border-color: #ea00ff;
 }
 
 /* ===== BOTONES ===== */
@@ -241,21 +249,21 @@ header{
     padding: 12px 25px;
     background: transparent;
     color: cyan;
-    border: 2px solid cyan;
+    border: 2px solid rgb(255, 0, 242);
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
-    box-shadow: 0 0 15px rgba(0,255,255,0.4);
+    box-shadow: 0 0 15px rgba(255, 0, 195, 0.4);
     transition: 0.3s;
 }
 
 .juego button:hover,
 .iniciar-juego button:hover,
 #resultado:hover {
-    background: cyan;
+    background: rgb(255, 0, 217);
     color: black;
-    box-shadow: 0 0 30px cyan;
+    box-shadow: 0 0 30px rgb(255, 0, 225);
 }
 
 /* ===== MENSAJES ===== */
@@ -263,11 +271,11 @@ header{
 #resultadoMensaje {
     margin-top: 20px;
     padding: 15px;
-    border: 1px solid cyan;
+    border: 1px solid rgb(255, 0, 208);
     border-radius: 10px;
     color: white;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 230, 0.3);
     background: rgba(0,0,0,0.4);
     font-size: 17px;
     line-height: 1.5;
@@ -275,8 +283,8 @@ header{
 
 
 .juego h2 {
-    color: cyan;
-    text-shadow: 0 0 10px cyan;
+    color: rgb(255, 0, 238);
+    text-shadow: 0 0 10px rgb(242, 0, 255);
 }
 
 
@@ -299,7 +307,7 @@ header{
 
 .content input:focus {
     box-shadow: 0 0 20px rgb(255, 255, 255);
-    border-color: #00ffff;
+    border-color: #ff00dd;
 }
 
 .content input:hover{
@@ -335,8 +343,8 @@ header{
     background: rgb(255, 255, 255);
     color: black;
     box-shadow:
-        0 0 20px cyan,
-        0 0 40px rgba(0,255,255,0.8);
+        0 0 20px rgb(225, 0, 255),
+        0 0 40px rgba(230, 0, 255, 0.8);
 }
 
 .datos-bandi{
@@ -350,3 +358,36 @@ header{
         0 0 4px rgb(234, 23, 174);
 }
 
+
+.boton-volver{
+    display: flex;
+    justify-content: center;
+}
+
+.volver-menu{
+    padding: 12px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: 2px solid rgb(209, 205, 205);
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow:
+        0 0 10px rgba(143, 143, 143, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.802);
+    transition: 0.3s;
+}
+
+.volver-menu:hover{
+    background: rgb(208, 208, 208);
+    color: black;
+    box-shadow:
+        0 0 20px rgb(221, 255, 0),
+        0 0 40px rgba(221, 255, 0, 0.8);
+}
+
+.volver-menu:active{
+    transform: scale(0.95);
+}
