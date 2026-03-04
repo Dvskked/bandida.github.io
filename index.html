@@ -1,361 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
+        <title>Calculadora de Bandidas</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="assets/img/bandida.ico" type="image/x-icon">
-        <title>Calculadora bandidas</title>
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
+
     <body>
-        <div class="header">
-            <header>
-                <div class="imagen1-header">
-                    <img src="assets/img/bandida1.png" alt="bandida1" class="bandida-header">
-                </div>
-                <div class="titulo-header">
-                    <h1>CALCULADORA DE BANDIDAS</h1>
-                </div>
-                <div class="imagen2-header">
-                    <img src="assets/img/bandida2.jpg" alt="bandida2" class="bandida-header">
-                </div>
-            </header>
+
+    <header class="main-header">
+        <img src="assets/img/bandida1.png" class="logo">
+        <h1 class="title">CALCULADORA DE BANDIDAS</h1>
+        <img src="assets/img/bandida2.jpg" class="logo">
+    </header>
+
+    <main class="margen">
+
+        <!-- REGISTRO -->
+        <div id="registro" class="card">
+            <h2>Bienvenido</h2>
+            <input type="text" id="nombreUsuario" placeholder="Tu nombre">
+            <button id="btnIniciar">Entrar</button>
+            <a href="https://dvskked.github.io/bandidaje.github.io/" class="btn-home">
+                ⬅ Volver al Inicio
+            </a>
         </div>
 
-        <div class="contenido">
-            <div class="margen">
-                <div class="registro" id="registro">
-                    <div class="titulo-registro">
-                        <h1>WELCOME</h1>
-                    </div>
-                    <div class="usuario">
-                        <div class="entrada">
-                            <input type="text" id="nombreUsuario" placeholder="Nombre usuario">
-                        </div>
-                        <div class="boton-entrada">
-                            <button class="iniciar" id="btnIniciar">Comenzar Juego</button>
-                        </div>
-                        <div class="boton-volver">
-                            <button class="volver-menu" onclick="menu()">Volver</button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="calculadora" id="calculadora">
-                    <div class="titulo-calculadora">
-                        <h2>Comencemos a jugar...</h2>
-                    </div>
-                    <div class="mensaje-calculadora">
-                        <span id="saludo"></span>
-                    </div>
-                    <br><br>
-                    <div class="como-funciona">
-                        <span>Cuando le des a <strong>Comenzar test</strong>, te hare una clase de preguntas y tendras que describir perfectamente como es la chica (LA BANDIDA), asi te asignare una clase de puntos de acuerdo a la bandida, y al final te dare la respectiva calificacion... ES IMPORTANTE, que en el input solo ingreses el <strong>NUMERO</strong> de la opcion, de lo contrario, no tendras puntaje confirmado</span>
-                    </div>
-                    <div class="iniciar-juego">
-                        <button id="juegoGo">Comenzar test D:</button>
-                    </div>
-                </div>
-
-
-                
-                <div id="juego">
-
-                    <div class="content">
-                        <div class="nombre-bandida">
-                            <div class="titulo-nombre">
-                                <h2>Nombre de la bandida:</h2>
-                            </div>
-                            <div class="nombre">
-                                <input type="text" placeholder="Nombre bandida" id="mujer">
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-                    <div class="content">
-                        <div class="primera">
-                            <div class="titulo-primero">
-                                <h2>¿Que color de pelo tiene?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Rubio</span><br>
-                                <span>(2) Castaño</span><br>
-                                <span>(3) Negro</span><br>
-                                <span>(4) Rojo</span><br>
-                                <span>(5) Otro color</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro1">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    
-
-                    
-                    <div class="content">
-                        <div class="segunda">
-                            <div class="titulo-segundo">
-                                <h2>¿Que tipo de pelo tiene?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Liso</span><br>
-                                <span>(2) Ondulado</span><br>
-                                <span>(3) Churco</span><br>
-                                <span>(4) Calva</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro2">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    
-
-
-                    <div class="content">
-                        <div class="tercera">
-                            <div class="titulo-tercero">
-                                <h2>¿Color de ojos de la bandida?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Negro</span><br>
-                                <span>(2) Café</span><br>
-                                <span>(3) Verde</span><br>
-                                <span>(4) Azules</span><br>
-                                <span>(5) Otro color</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro3">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    
-
-
-                    <div class="content">
-                        <div class="cuarta">
-                            <div class="titulo-cuarto">
-                                <h2>¿Que forma tiene la nariz?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Corta</span><br>
-                                <span>(2) Normal</span><br>
-                                <span>(3) Grande</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro4">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="quinta">
-                            <div class="titulo-quinto">
-                                <h2>¿De que ciudad es?</h2>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Bucaramanga</span><br>
-                                <span>(2) Medellín</span><br>
-                                <span>(3) Barranquilla/Cartagena/Santa Marta</span><br>
-                                <span>(4) Boyaca</span><br>
-                                <span>(5) Bogota</span><br>
-                                <span>(6) Cali</span><br>
-                                <span>(7) Venezolana</span><br>
-                                <span>(8) Otro</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro5">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="sexto">
-                            <div class="titulo-sexto">
-                                <h2>¿Que color de piel tiene?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Blanca</span><br>
-                                <span>(2) Morena</span><br>
-                                <span>(3) Afro</span><br>
-                                <span>(4) Amarilla</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro6">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="septimo">
-                            <div class="titulo-septimo">
-                                <h2>¿Cual es su altura?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Alta</span><br>
-                                <span>(2) Igual</span><br>
-                                <span>(3) Baja</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro7">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="octavo">
-                            <div class="titulo-octavo">
-                                <h2>¿Su tipo de cuerpo?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Flaca</span><br>
-                                <span>(2) Normal</span><br>
-                                <span>(3) Gorda</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro8">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="noveno">
-                            <div class="titulo-noveno">
-                                <h2>¿Es mayor o menor para ti?</h2>
-                                <br><br>
-                            </div>
-                            <div class="opciones">
-                                <span>(1) Mayor que tú</span><br>
-                                <span>(2) Igual que tú</span><br>
-                                <span>(3) Menor que tú</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro9">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-                    
-
-
-                    <div class="content">
-                        <div class="decimo">
-                            <div class="titulo-decimo">
-                                <h2>¿La extrañas?</h2>
-                            </div>
-                            <div class="opciones">
-                                <span>Si</span><br>
-                                <span>No</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro10">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-
-                    <div class="content">
-                        <div class="once">
-                            <div class="titulo-once">
-                                <h2>¿En sus redes sociales tiene muchos seguidores?</h2>
-                            </div>
-                            <div class="opciones">
-                                <span>Si</span><br>
-                                <span>No</span>
-                            </div>
-                            <div class="input">
-                                <input type="text" placeholder="respuesta" id="registro11">
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="content">
-                        <div class="doce">
-                            <div class="titulo-doce">
-                                <h2>Ingrese la foto de la bandida</h2>
-                            </div>
-                            <div class="input">
-                                <input type="file" src="" alt="imagendelabandida" id="registro12">
-                            </div>
-
-                            <div class="resultados">
-                                <button id="resultado">Ver resultados :DDD</button>
-                            </div>
-                            <hr>
-                        </div>
-                    </div>
-                    <hr>
-                    <br><br>
-                    
-                    
-                </div>
-
-
-                <div class="re" id="re">
-                    <div class="mensaje-resulado">
-                        <span id="resultadoMensajito"></span>
-                    </div>
-                    <br><br>
-                    <div id="imagenResultado">
-                        <img id="imgResultado" src="" alt="">
-                    </div>
-                    <div class="datos-bandi">
-                        <div class="titulo-datos">
-                            <h2>Datos de la bandida:</h2>
-                        </div>
-                        <div class="info-bandida">
-                            <span id="soso"></span>
-                            <span style="color: cyan;"><strong>Realizado por Andres Leclerc</strong></span>
-                        </div>
-                    </div>
-                    <br><br><br>
-                    <br><br>
-
-
-                    <button onclick="volver()" class="volver">Volver hacer el test</button>
-                </div>
-
-            </div>
+        <!-- EXPLICACIÓN -->
+        <div id="calculadora" class="card hidden">
+            <p id="saludo"></p>
+            <button id="juegoGo">Ir al Test</button>
         </div>
 
+        <!-- JUEGO -->
+        <div id="juego" class="card hidden">
+            <h2>Datos de la Bandida</h2>
 
+            <input type="text" id="mujer" placeholder="Nombre de la bandida">
 
-      
+            <select id="registro1">
+                <option value="">Color de pelo</option>
+                <option value="1">Rubio</option>
+                <option value="2">Castaño</option>
+                <option value="3">Negro</option>
+                <option value="4">Rojizo</option>
+                <option value="5">Otro</option>
+            </select>
+
+            <select id="registro2">
+                <option value="">Tipo de pelo</option>
+                <option value="1">Liso</option>
+                <option value="2">Ondulado</option>
+                <option value="3">Churco</option>
+                <option value="4">Calva</option>
+            </select>
+
+            <select id="registro3">
+                <option value="">Color de ojos</option>
+                <option value="1">Negros</option>
+                <option value="2">Cafes</option>
+                <option value="3">Verdes</option>
+                <option value="4">Azules</option>
+                <option value="5">Claritos</option>
+            </select>
+
+            <select id="registro4">
+                <option value="">Nariz</option>
+                <option value="1">Cortica</option>
+                <option value="2">Normal</option>
+                <option value="3">Grande</option>
+            </select>
+
+            <select id="registro5">
+                <option value="">Ciudad</option>
+                <option value="1">Bumangues</option>
+                <option value="2">Paisa</option>
+                <option value="3">Costeña</option>
+                <option value="4">Boyacense</option>
+                <option value="5">Rola</option>
+                <option value="6">Caleña</option>
+                <option value="7">Venezolana</option>
+                <option value="8">Otra</option>
+            </select>
+
+            <select id="registro6">
+                <option value="">Color de piel</option>
+                <option value="1">Blanquita</option>
+                <option value="2">Morenita</option>
+                <option value="3">Afro</option>
+                <option value="4">Amarilla</option>
+            </select>
+
+            <select id="registro7">
+                <option value="">Altura</option>
+                <option value="1">Alta</option>
+                <option value="2">Igual</option>
+                <option value="3">Bajita</option>
+            </select>
+
+            <select id="registro8">
+                <option value="">Tipo de cuerpo</option>
+                <option value="1">Flaca</option>
+                <option value="2">Normal</option>
+                <option value="3">Gordita</option>
+            </select>
+
+            <select id="registro9">
+                <option value="">Edad</option>
+                <option value="1">Mayor</option>
+                <option value="2">Misma edad</option>
+                <option value="3">Menor</option>
+            </select>
+
+            <select id="registro10">
+                <option value="">¿La extrañas?</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+                <option value="nose">No sé</option>
+            </select>
+
+            <select id="registro11">
+                <option value="">¿Muchos seguidores?</option>
+                <option value="si">Sí</option>
+                <option value="no">No</option>
+                <option value="nose">No sé</option>
+            </select>
+
+            <input type="file" id="registro12">
+
+            <button id="resultado">Ver resultados</button>
+        </div>
+
+        <!-- RESULTADO -->
+        <div id="re" class="card hidden">
+            <h2>Resultado Final</h2>
+            <div id="resultadoMensajito"></div>
+            <div id="soso"></div>
+            <img id="imgResultado" class="hidden">
+            <button onclick="volver()">Volver</button>
+        </div>
+
+    </main>
+
     <script src="assets/js/script.js"></script>
     </body>
 </html>
