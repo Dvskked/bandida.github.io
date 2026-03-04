@@ -1,393 +1,143 @@
-* {
-    box-sizing: border-box;
+:root{
+    --primary:#ff4da6;
+    --primary-soft:#ff85c1;
+    --dark:#0f1020;
+    --card:#181a30;
+    --border:#ff4da6;
 }
 
-body {
-    font-family: sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(black, rgb(52, 52, 52), rgb(46, 46, 46));
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#14142b,#0b0b18);
+    color:white;
 }
 
-#juegoGo{
-    color: #ea00ff;
+/* HEADER */
+
+.main-header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding:20px;
+    background:#121327;
+    border-bottom:2px solid var(--border);
 }
 
-#juegoGo:hover{
-    background: white;
+.logo{
+    width:85px;
+    height:85px;
+    object-fit:cover;
+    border-radius:20px;
+    border:2px solid var(--primary);
+    box-shadow:0 0 15px rgba(255,77,166,0.4);
 }
 
-
-header{
-    display: flex;
-    padding: 15px;
-    border: none;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+.title{
+    color:var(--primary);
+    font-size:26px;
+    letter-spacing:2px;
 }
 
-.titulo-header{
-    color: rgb(255, 0, 230);
-    text-shadow:
-        0 0 2px rgba(225, 34, 193, 0.872),
-        0 0 4px rgb(245, 33, 238);
-        font-size: 22px;
-}
-
-.bandida-header{
-    height: 100px;
-    width: 100px;
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    justify-content: center;
-}
-
-
-.contenido{
-    display: flex;
-    height: auto;
-    width: auto;
-    justify-content: center;
-    align-items: center;
-    margin: 70px;
-    position: relative;
-    overflow: hidden;
-    margin: 50px;
-}
-
-.contenido::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        radial-gradient(1px 1px at 20% 30%, white, transparent),
-        radial-gradient(1px 1px at 80% 40%, white, transparent),
-        radial-gradient(1px 1px at 50% 70%, white, transparent);
-    background-size: 80px 80px;
-    animation: nieve 35s linear infinite;
-    pointer-events: none;
-}
-
-
-@keyframes nieve {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 500px;
-    }
-}
-
+/* CONTENIDO */
 
 .margen{
-    min-height: 500px; 
-    width: 550px;
-    border: none;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding-bottom: 20px;
+    display:flex;
+    justify-content:center;
+    padding:40px 15px;
 }
 
-
-.registro{
-    padding: 20px;
+.card{
+    width:100%;
+    max-width:650px;
+    padding:35px;
+    background:var(--card);
+    border-radius:20px;
+    border:1px solid var(--border);
+    box-shadow:0 0 25px rgba(255,77,166,0.15);
+    animation:fadeIn .4s ease;
 }
 
+/* INPUTS */
 
-.titulo-registro{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration: underline;
+input,select,button{
+    width:100%;
+    margin:12px 0;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid var(--primary);
+    background:#202242;
+    color:white;
+    font-size:14px;
 }
 
-.mensaje-registro{
-    color: rgb(222, 220, 220);
-    
+input:focus,select:focus{
+    outline:none;
+    border-color:var(--primary-soft);
 }
 
-.usuario{
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* BOTONES */
+
+button{
+    background:var(--primary);
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.entrada input{
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 16px;
-    border-radius: 8px;
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    color: white;
-    outline: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
+button:hover{
+    background:var(--primary-soft);
+    transform:scale(1.03);
 }
 
-.entrada input::placeholder{
-    color: rgba(255,255,255,0.6);
-}
-
-.entrada input:focus{
-    box-shadow:
-        0 0 10px rgb(193, 193, 193),
-        0 0 20px rgba(242, 242, 242, 0.7);
-    border-color: white;
-}
-
-
-.boton-entrada{
-    display: flex;
-    justify-content: center;
-}
-
-.iniciar{
-    padding: 12px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 8px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    box-shadow:
-        0 0 10px rgba(143, 143, 143, 0.6),
-        inset 0 0 10px rgba(255, 255, 255, 0.802);
-    transition: 0.3s;
-}
-
-.iniciar:hover{
-    background: rgb(208, 208, 208);
-    color: black;
-    box-shadow:
-        0 0 20px rgb(247, 0, 255),
-        0 0 40px rgba(255, 0, 221, 0.8);
-}
-
-.iniciar:active{
-    transform: scale(0.95);
-}
-
-
-.calculadora{
-    display: none;
-    margin-top: 30px;
-    padding: 20px;
-    border-top: 1px solid rgb(255, 0, 204);
-    color: white;
-}
-
-.iniciar-juego{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.iniciar-juego button{
-    height: 50px;
-    width: 200px;
-    border-radius: 10px;
-    color: #ff00dd;
-}
-
-.iniciar-juego button:hover{
-    background: rgb(255, 255, 255);
-    color: black;
-    box-shadow:
-        0 0 20px rgb(247, 0, 255),
-        0 0 40px rgba(255, 0, 195, 0.8);
-}
-
-#juego{
-    display: none;
-    color: white;
-}
-
-.content{
-    margin-top: 70px;
-
-}
-
-.re{
-    display: none;
-}
-
-/* ===== INPUTS ===== */
-.juego input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    background: transparent;
-    border: 2px solid rgb(238, 0, 255);
-    border-radius: 8px;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    box-shadow: 0 0 10px rgba(255, 0, 238, 0.4);
-    transition: 0.3s;
-}
-
-.juego input:focus {
-    box-shadow: 0 0 20px rgb(255, 0, 242);
-    border-color: #ea00ff;
-}
-
-/* ===== BOTONES ===== */
-.juego button,
-.iniciar-juego button,
-#resultado {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: transparent;
-    color: cyan;
-    border: 2px solid rgb(255, 0, 242);
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px rgba(255, 0, 195, 0.4);
-    transition: 0.3s;
-}
-
-.juego button:hover,
-.iniciar-juego button:hover,
-#resultado:hover {
-    background: rgb(255, 0, 217);
-    color: black;
-    box-shadow: 0 0 30px rgb(255, 0, 225);
-}
-
-/* ===== MENSAJES ===== */
-.mensaje-calculadora,
-#resultadoMensaje {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid rgb(255, 0, 208);
-    border-radius: 10px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 0 15px rgba(255, 0, 230, 0.3);
-    background: rgba(0,0,0,0.4);
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-
-.juego h2 {
-    color: rgb(255, 0, 238);
-    text-shadow: 0 0 10px rgb(242, 0, 255);
-}
-
-
-.opciones span {
-    display: block;
-    margin: 5px 0;
-    color: #ddd;
-}
-
-.content input{
-    height: 40px;
-    width: 180px;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-top: 10px;
-    padding: 5px;
-    outline: none;
-    border: white;
-}
-
-.content input:focus {
-    box-shadow: 0 0 20px rgb(255, 255, 255);
-    border-color: #ff00dd;
-}
-
-.content input:hover{
-    background: rgb(218, 214, 214);
-}
-
-.content h2{
-    text-shadow:
-        0 0 2px rgba(255, 255, 255, 0.872),
-        0 0 4px rgb(0, 0, 0);
-}
+/* RESULTADO */
 
 #resultadoMensajito{
-    padding: 10px;
-    color: white;
-    width: 200px;
-    height: 500px;
-
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
 
 #imgResultado{
-    height: 100%;
-    width: 100%;
+    width:200px;
+    border-radius:20px;
+    border:2px solid var(--primary);
+    margin-top:15px;
 }
 
-.volver{
-    height: 50px;
-    width: 200px;
-    border-radius: 10px;
+/* UTIL */
+
+.hidden{
+    display:none;
 }
 
-.volver:hover{
-    background: rgb(255, 255, 255);
-    color: black;
-    box-shadow:
-        0 0 20px rgb(225, 0, 255),
-        0 0 40px rgba(230, 0, 255, 0.8);
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
 }
 
-.datos-bandi{
-    color: rgb(209, 209, 209);
+@media(max-width:768px){
+    .main-header{
+        flex-direction:column;
+    }
 }
 
-.insta{
-    text-decoration: none;
-    text-shadow:
-        0 0 2px rgba(255, 255, 255, 0.872),
-        0 0 4px rgb(234, 23, 174);
+.btn-home{
+    display:inline-block;
+    margin:20px 0;
+    padding:10px 20px;
+    background:transparent;
+    border:2px solid var(--primary);
+    color:var(--primary);
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
 }
 
-
-.boton-volver{
-    display: flex;
-    justify-content: center;
-}
-
-.volver-menu{
-    padding: 12px 25px;
-    font-size: 12px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-    background: transparent;
-    border: 2px solid rgb(209, 205, 205);
-    border-radius: 8px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    box-shadow:
-        0 0 10px rgba(143, 143, 143, 0.6),
-        inset 0 0 10px rgba(255, 255, 255, 0.802);
-    transition: 0.3s;
-}
-
-.volver-menu:hover{
-    background: rgb(208, 208, 208);
-    color: black;
-    box-shadow:
-        0 0 20px rgb(221, 255, 0),
-        0 0 40px rgba(221, 255, 0, 0.8);
-}
-
-.volver-menu:active{
-    transform: scale(0.95);
+.btn-home:hover{
+    background:var(--primary);
+    color:white;
+    transform:scale(1.05);
 }
