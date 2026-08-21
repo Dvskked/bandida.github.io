@@ -1,150 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Calculadora de Bandidas</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body>
+    <!-- SEO -->
+    <title>Calculadora de Bandidas | Mide su nivel de bandidaje</title>
+    <meta name="description" content="Calculadora de Bandidas: describe sus rasgos y el sistema calcula su puntaje y nivel de bandidaje, desde BANDIDA DE LA MONDA hasta BANDIDA DE BANDIDAS.">
+    <meta name="keywords" content="calculadora de bandidas, nivel de bandida, test bandidaje, bandida">
+    <meta name="author" content="Andrés Forero">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#140a24">
+    <link rel="canonical" href="https://dvskked.github.io/bandida.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Calculadora de Bandidaje">
+    <meta property="og:title" content="Calculadora de Bandidas">
+    <meta property="og:description" content="Describe a la sospechosa y recibe su nivel de bandidaje con veredicto sin anestesia.">
+    <meta property="og:url" content="https://dvskked.github.io/bandida.github.io/">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Calculadora de Bandidas">
+    <meta name="twitter:description" content="Describe a la sospechosa y recibe su nivel de bandidaje con veredicto sin anestesia.">
+
+    <!-- Datos estructurados -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculadora de Bandidas",
+        "url": "https://dvskked.github.io/bandida.github.io/",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "es",
+        "author": { "@type": "Person", "name": "Andrés Forero" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "COP" }
+    }
+    </script>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
     <header class="main-header">
-        <img src="assets/img/bandida1.png" class="logo">
-        <h1 class="title">CALCULADORA DE BANDIDAS</h1>
-        <img src="assets/img/bandida2.jpg" class="logo">
+        <img src="assets/img/bandida1.png" alt="Ícono de bandida" class="logo" width="85" height="85">
+        <div class="header-text">
+            <h1 class="title">CALCULADORA DE BANDIDAS</h1>
+            <p class="tagline">Analiza el bandidaje de cualquier sospechosa</p>
+        </div>
+        <img src="assets/img/bandida2.jpg" alt="Segundo ícono de bandida" class="logo" width="85" height="85">
     </header>
 
     <main class="margen">
 
-        <!-- REGISTRO -->
-        <div id="registro" class="card">
-            <h2>Bienvenido</h2>
-            <input type="text" id="nombreUsuario" placeholder="Tu nombre">
-            <button id="btnIniciar">Entrar</button>
+        <!-- PASO 1 · REGISTRO -->
+        <section id="registro" class="card" aria-labelledby="titulo-registro">
+            <h2 id="titulo-registro">Bienvenida al sistema</h2>
+            <p class="hint">Ingresa tu nombre para iniciar el análisis.</p>
+
+            <form id="formRegistro" novalidate>
+                <label for="nombreUsuario">Tu nombre</label>
+                <input type="text" id="nombreUsuario" name="nombreUsuario"
+                       placeholder="Ej: Andrés" autocomplete="given-name"
+                       maxlength="30" required>
+                <p class="error" id="errorNombre" hidden>Escribe tu nombre para continuar, crack.</p>
+                <button type="submit" id="btnIniciar">Entrar al sistema</button>
+            </form>
+
             <a href="https://dvskked.github.io/bandidaje.github.io/" class="btn-home">
-                ⬅ Volver al Inicio
+                &#8592; Volver al inicio
             </a>
-        </div>
+        </section>
 
-        <!-- EXPLICACIÓN -->
-        <div id="calculadora" class="card hidden">
-            <p id="saludo"></p>
-            <button id="juegoGo">Ir al Test</button>
-        </div>
+        <!-- PASO 2 · EXPLICACIÓN -->
+        <section id="calculadora" class="card" hidden aria-labelledby="titulo-explicacion">
+            <h2 id="titulo-explicacion">Cómo funciona</h2>
+            <p id="saludo" class="saludo"></p>
+            <ul class="pasos">
+                <li>Describe a la bandida con los 11 rasgos del formulario.</li>
+                <li>El sistema suma el puntaje de cada respuesta.</li>
+                <li>Recibirás su nivel de bandidaje y un veredicto sin anestesia.</li>
+            </ul>
+            <button type="button" id="juegoGo">Ir al test</button>
+        </section>
 
-        <!-- JUEGO -->
-        <div id="juego" class="card hidden">
-            <h2>Datos de la Bandida</h2>
+        <!-- PASO 3 · TEST -->
+        <section id="juego" class="card" hidden aria-labelledby="titulo-test">
+            <h2 id="titulo-test">Datos de la bandida</h2>
 
-            <input type="text" id="mujer" placeholder="Nombre de la bandida">
+            <div class="progreso" role="progressbar" aria-label="Progreso del test"
+                 aria-valuemin="0" aria-valuemax="11" aria-valuenow="0">
+                <div class="progreso-barra" id="barraProgreso"></div>
+                <span class="progreso-texto" id="textoProgreso">0 / 11</span>
+            </div>
 
-            <select id="registro1">
-                <option value="">Color de pelo</option>
-                <option value="1">Rubio</option>
-                <option value="2">Castaño</option>
-                <option value="3">Negro</option>
-                <option value="4">Rojizo</option>
-                <option value="5">Otro</option>
-            </select>
+            <form id="formTest" novalidate>
+                <label for="nombreSujeto">Nombre de la bandida</label>
+                <input type="text" id="nombreSujeto" placeholder="Ej: Laura" maxlength="30" required>
 
-            <select id="registro2">
-                <option value="">Tipo de pelo</option>
-                <option value="1">Liso</option>
-                <option value="2">Ondulado</option>
-                <option value="3">Churco</option>
-                <option value="4">Calva</option>
-            </select>
+                <label for="registro1">Color de pelo</label>
+                <select id="registro1" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Rubia</option>
+                    <option value="2">Castaña</option>
+                    <option value="3">Negra</option>
+                    <option value="4">Rojiza</option>
+                    <option value="5">Otro</option>
+                </select>
 
-            <select id="registro3">
-                <option value="">Color de ojos</option>
-                <option value="1">Negros</option>
-                <option value="2">Cafes</option>
-                <option value="3">Verdes</option>
-                <option value="4">Azules</option>
-                <option value="5">Claritos</option>
-            </select>
+                <label for="registro2">Tipo de pelo</label>
+                <select id="registro2" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Liso</option>
+                    <option value="2">Ondulado</option>
+                    <option value="3">Churco</option>
+                    <option value="4">Calva</option>
+                </select>
 
-            <select id="registro4">
-                <option value="">Nariz</option>
-                <option value="1">Cortica</option>
-                <option value="2">Normal</option>
-                <option value="3">Grande</option>
-            </select>
+                <label for="registro3">Color de ojos</label>
+                <select id="registro3" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Negros</option>
+                    <option value="2">Cafés</option>
+                    <option value="3">Verdes</option>
+                    <option value="4">Azules</option>
+                    <option value="5">Claritos</option>
+                </select>
 
-            <select id="registro5">
-                <option value="">Ciudad</option>
-                <option value="1">Bumangues</option>
-                <option value="2">Paisa</option>
-                <option value="3">Costeña</option>
-                <option value="4">Boyacense</option>
-                <option value="5">Rola</option>
-                <option value="6">Caleña</option>
-                <option value="7">Venezolana</option>
-                <option value="8">Otra</option>
-            </select>
+                <label for="registro4">Nariz</label>
+                <select id="registro4" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Cortica</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Grande</option>
+                </select>
 
-            <select id="registro6">
-                <option value="">Color de piel</option>
-                <option value="1">Blanquita</option>
-                <option value="2">Morenita</option>
-                <option value="3">Afro</option>
-                <option value="4">Amarilla</option>
-            </select>
+                <label for="registro5">Ciudad / origen</label>
+                <select id="registro5" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Bumanguesa</option>
+                    <option value="2">Paisa</option>
+                    <option value="3">Costeña</option>
+                    <option value="4">Boyacense</option>
+                    <option value="5">Rola</option>
+                    <option value="6">Caleña</option>
+                    <option value="7">Venezolana</option>
+                    <option value="8">Otra</option>
+                </select>
 
-            <select id="registro7">
-                <option value="">Altura</option>
-                <option value="1">Alta</option>
-                <option value="2">Igual</option>
-                <option value="3">Bajita</option>
-            </select>
+                <label for="registro6">Color de piel</label>
+                <select id="registro6" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Blanquita</option>
+                    <option value="2">Morenita</option>
+                    <option value="3">Afrocolombiana</option>
+                    <option value="4">Amarilla</option>
+                </select>
 
-            <select id="registro8">
-                <option value="">Tipo de cuerpo</option>
-                <option value="1">Flaca</option>
-                <option value="2">Normal</option>
-                <option value="3">Gordita</option>
-            </select>
+                <label for="registro7">Altura</label>
+                <select id="registro7" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Alta</option>
+                    <option value="2">Igual que tú</option>
+                    <option value="3">Bajita</option>
+                </select>
 
-            <select id="registro9">
-                <option value="">Edad</option>
-                <option value="1">Mayor</option>
-                <option value="2">Misma edad</option>
-                <option value="3">Menor</option>
-            </select>
+                <label for="registro8">Tipo de cuerpo</label>
+                <select id="registro8" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Flaca</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Gordita</option>
+                </select>
 
-            <select id="registro10">
-                <option value="">¿La extrañas?</option>
-                <option value="si">Sí</option>
-                <option value="no">No</option>
-                <option value="nose">No sé</option>
-            </select>
+                <label for="registro9">Edad</label>
+                <select id="registro9" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="1">Mayor que tú</option>
+                    <option value="2">Misma edad</option>
+                    <option value="3">Menor que tú</option>
+                </select>
 
-            <select id="registro11">
-                <option value="">¿Muchos seguidores?</option>
-                <option value="si">Sí</option>
-                <option value="no">No</option>
-                <option value="nose">No sé</option>
-            </select>
+                <label for="registro10">¿La extrañas?</label>
+                <select id="registro10" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="nose">No sé</option>
+                </select>
 
-            <input type="file" id="registro12">
+                <label for="registro11">¿Tiene muchos seguidores?</label>
+                <select id="registro11" required>
+                    <option value="" selected>— Selecciona —</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="nose">No sé</option>
+                </select>
 
-            <button id="resultado">Ver resultados</button>
-        </div>
+                <label for="registro12">Foto de la sospechosa (opcional)</label>
+                <input type="file" id="registro12" accept="image/*">
 
-        <!-- RESULTADO -->
-        <div id="re" class="card hidden">
-            <h2>Resultado Final</h2>
-            <div id="resultadoMensajito"></div>
-            <div id="soso"></div>
-            <img id="imgResultado" class="hidden">
-            <button onclick="volver()">Volver</button>
-        </div>
+                <p class="error" id="errorTest" hidden>Faltan campos por llenar, crack.</p>
+                <button type="submit" id="resultado">Ver resultados</button>
+            </form>
+        </section>
+
+        <!-- PASO 4 · RESULTADO -->
+        <section id="re" class="card" hidden aria-labelledby="titulo-resultado">
+            <h2 id="titulo-resultado">Resultado final</h2>
+
+            <p class="nivel-label">Nivel obtenido</p>
+            <p class="nivel-badge" id="nivelBadge"></p>
+
+            <div class="score-box">
+                <p class="score-numero"><span id="puntosFinal">0</span> pts</p>
+                <div class="score-barra"><div class="score-fill" id="scoreFill"></div></div>
+                <p class="score-max" id="scoreMax"></p>
+            </div>
+
+            <h3>Veredicto del sistema</h3>
+            <div id="resultadoMensajito" class="veredicto"></div>
+
+            <h3>Ficha de la bandida</h3>
+            <dl id="soso" class="ficha"></dl>
+            <p class="recomendacion" id="recomendacion"></p>
+
+            <figure class="foto-figura" id="figuraFoto" hidden>
+                <img id="imgResultado" alt="Foto proporcionada de la bandida analizada">
+                <figcaption>Evidencia fotográfica aportada por el usuario.</figcaption>
+            </figure>
+
+            <div class="acciones">
+                <button type="button" id="btnVolver">Volver a empezar</button>
+                <a href="https://dvskked.github.io/bandidaje.github.io/" class="btn-home">
+                    &#8592; Ir al inicio
+                </a>
+            </div>
+        </section>
 
     </main>
 
-    <script src="assets/js/script.js"></script>
-    </body>
-</html>
+    <footer class="main-footer">
+        <p>
+            Calculadora de Bandidas · proyecto Bandidaje de
+            <a href="https://www.instagram.com/4ndres018/" target="_blank" rel="noopener noreferrer">@4ndres018</a>
+        </p>
+    </footer>
 
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
